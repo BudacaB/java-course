@@ -16,5 +16,11 @@ public class Main {
 
         // compares internals
         System.out.println(letter1.equals(letter2));
+
+        String name1 = "Jean";
+        String name2 = "JEAN";
+
+        System.out.println(name1.equalsIgnoreCase(name2));
+        System.out.println(name1.length());
     }
 }
