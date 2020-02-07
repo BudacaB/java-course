@@ -41,5 +41,8 @@ public class Main {
             System.out.println(evens[i]);
             System.out.println(odds[i]);
         }
+
+        String name = "Bog";
+        System.out.println(name.length());
     }
 }
