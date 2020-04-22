@@ -2,7 +2,7 @@ package com.company;
 
 public class Main {
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        String[] days = new String[7];
 //
 //        days[0] = "Mon";
@@ -27,22 +27,42 @@ public class Main {
 //        System.out.println(args[0]);
 //    }
 
-    public static void main(String[] args) {
-        int evens[] = new int[5];
-        evens[0] = 0;
-        evens[1] = 2;
-        evens[2] = 4;
-        evens[3] = 6;
-        evens[4] = 8;
+//    public static void main(String[] args) {
+//        int evens[] = new int[5];
+//        evens[0] = 0;
+//        evens[1] = 2;
+//        evens[2] = 4;
+//        evens[3] = 6;
+//        evens[4] = 8;
+//
+//        int odds[] = { 1, 3, 5, 7, 9}; // other way to declare and insert values
+//
+//        for (int i = 0; i < evens.length; i++) {
+//            System.out.println(evens[i]);
+//            System.out.println(odds[i]);
+//        }
+//
+//        String name = "Bog";
+//        System.out.println(name.length());
+//    }
 
-        int odds[] = { 1, 3, 5, 7, 9}; // other way to declare and insert values
+        int odds[] = {1, 3, 5, 7, 9};
 
-        for (int i = 0; i < evens.length; i++) {
-            System.out.println(evens[i]);
-            System.out.println(odds[i]);
+        String bookInfo[][] = {
+                {"Book1", "Author1"},
+                {"Book2", "Author2"},
+                {"Book3", "Author3"}
+        };
+
+        for (int num : odds) {
+            System.out.println(num);
         }
 
-        String name = "Bog";
-        System.out.println(name.length());
+        for (String[] book : bookInfo) {
+            for (String s : book) {
+                System.out.println(s + " ");
+            }
+            System.out.println();
+        }
     }
 }
