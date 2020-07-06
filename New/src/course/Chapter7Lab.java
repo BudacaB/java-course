@@ -4,8 +4,7 @@ public class Chapter7Lab {
 
     public static void main (String[] args)
     {
-        System.out.println(conversion(fahrenheitToCelsius(68)));
-        System.out.println(conversion(celsiusToFahrenheit(20)));
+        System.out.println(conversion(68, fahrenheitToCelsius(68)));
     }
 
     static float fahrenheitToCelsius(float fahrenheit) {
@@ -16,7 +15,7 @@ public class Chapter7Lab {
         return (float) (celsius * 1.8 + 32);
     }
 
-    static String conversion(float value) {
-        return "The result is " + value;
+    static String conversion(float fahrenheit, float celsius) {
+        return fahrenheit + " Fahrenheit is " + celsius + " degrees Celsius";
     }
 }
