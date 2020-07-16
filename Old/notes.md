@@ -52,3 +52,15 @@ In Java add a ';' semicolon at the end of the line and you get a statement
 - Static fields and methods reside within the class itself and are usable as soon as the program starts and the class is loaded
 - Non-static fields and methods reside in individual objects, which mush be, created before their methods can be called and their fields used
     - since an object is an instance of a class, the term instance is sometimes used as a synonym for non-static
+    
+---
+<h2>OOP</h2>
+
+- Encapsulation
+- Inheritance
+- Polymorphism
+
+UML - unified modelling language - helps with diagrams
+- classname
+- fields
+- methods
