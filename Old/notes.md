@@ -60,7 +60,34 @@ In Java add a ';' semicolon at the end of the line and you get a statement
 - Inheritance
 - Polymorphism
 
-UML - unified modelling language - helps with diagrams
+
+UML - unified modelling language - helps with diagrams ; sections:
 - classname
 - fields
 - methods
+
+OOP motivation:
+- big software apps with OO tend to be more maintainable
+- modularize in smaller pieces - e.g. abstract away pieces of code to functions/methods
+- OOP adds a layer of abstraction and groups modules with related functionality together with the info that they manipulate
+- this cohesive unit is called an object
+- software objects often represent real-world objects that contain both state and behavior
+- the state of the object is maintained by a set of variables inside the object, knows as fields
+- the behavior of the object is performed by a set of functions inside the object, knows as methods
+
+Class vs object
+- class -> blueprint for the object - define the structure and content
+- object -> instance of a class
+- some info and functionality exist in the class, and are shared by all instances of that class
+
+Field
+- data item defined in a class
+- can be static of instance
+- static fields reside in the class - available even without having an instance - will be shared by all objects
+- instance fields - not using 'static' - reside in various objects - each object will have its own copy of these fields
+
+Method
+- sit inside the class - provide functionality
+- could also be static or instance - static methods can only access static fields
+- instance methods can access instance fields - and also static
+
