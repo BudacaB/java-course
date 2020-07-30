@@ -140,3 +140,11 @@ Best practices
 - everything inside of the class should have a common purpose (High Cohesion)
 - classes should rely on the functionality of other classes as little as possible (Low Coupling)
 - high cohesion and low coupling are usually in conflict with one another, but generally high cohesion is more important
+
+---
+
+Objects
+- get initialized -> represent an instance of a class
+- 'new' keyword -> memory gets allocated (in the heap) for all non-static fields of the object, initializes them and executes one or more constructors
+    - return a reference to the newly-created object
+- 

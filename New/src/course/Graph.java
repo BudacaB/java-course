@@ -76,11 +76,13 @@ public class Graph {
     {
         Graph graph = new Graph(4);
         graph.addEdge(0, 1);
-        graph.addEdge(0, 2);
         graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
-        graph.addEdge(2, 3);
         graph.addEdge(3, 3);
+        graph.addEdge(2, 0);
+        graph.addEdge(0, 2);
+        graph.addEdge(2, 3);
+
+        //System.out.println(graph.adj);
 
         if(graph.isCyclic())
             System.out.println("Graph contains cycle");
