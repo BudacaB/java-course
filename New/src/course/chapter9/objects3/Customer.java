@@ -5,9 +5,14 @@ public class Customer {
     String lastName;
     Account acc;
 
-    void init(String fn, String ln) {
+    Customer(String fn, String ln) {
         firstName = fn;
         lastName = ln;
+    }
+
+    Customer() {
+        firstName = "John";
+        lastName = "Doe";
     }
 
     void addAccount() {
