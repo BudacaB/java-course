@@ -5,11 +5,12 @@ public class Customer {
     String lastName;
     Account acc;
 
+    void init(String fn, String ln) {
+        firstName = fn;
+        lastName = ln;
+    }
+
     void addAccount() {
-//        acc = new Account();
-//        acc.accountId = Account.getNextId();
-//        acc.balance = 0;
-//        acc.display();
         this.addAccount(0);
     }
 
@@ -17,6 +18,7 @@ public class Customer {
         acc = new Account();
         acc.accountId = Account.getNextId();
         acc.balance = initialBalance;
+        System.out.println(firstName + "'s" + " account has been created");
         acc.display();
     }
 }
