@@ -147,4 +147,13 @@ Objects
 - get initialized -> represent an instance of a class
 - 'new' keyword -> memory gets allocated (in the heap) for all non-static fields of the object, initializes them and executes one or more constructors
     - return a reference to the newly-created object
-- 
+    
+Final - constant - using capital letters as convention
+This keyword - referst to the current object
+Methods - can return a value of any type, including a primitive datatype, an object reference or an array of either
+    - if it doesn't need to return a value it can be declared as void
+    - the name of the method along with the list of parameter datatypes, is termed the method signature
+    - a class can have many methods of the same name, as long as they all have different signatures (overloading)
+    - the arguments you pass determine which method is called
+    - the method's return type is not part of the signature
+Constructor - special method used to initialize an object
