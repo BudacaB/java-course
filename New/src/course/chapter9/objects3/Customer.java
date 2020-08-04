@@ -2,20 +2,18 @@ package course.chapter9.objects3;
 
 public class Customer {
     // fields
-    String firstName;
-    String lastName;
-    Account acc;
+    private String firstName;
+    private String lastName;
+    private Account acc;
 
     // constructors
-    Customer(String fn, String ln) {
-        firstName = fn;
-        lastName = ln;
+    public Customer(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    Customer() {
+    public Customer() {
         this("John", "Doe");
-//        firstName = "John";
-//        lastName = "Doe";
     }
 
     // methods
@@ -29,5 +27,13 @@ public class Customer {
         acc.balance = initialBalance;
         System.out.println(firstName + "'s" + " account has been created");
         acc.display();
+    }
+
+    public Account getAcc() {
+        return acc;
+    }
+
+    public String Name() {
+        return firstName + " " + lastName;
     }
 }

@@ -106,6 +106,8 @@ Access control
 - due to encapsulation, any fields declared inside a class are given the private modifier - only mechanism to modify this data from outside the class is by means of method calls
 - occasionally you might have a constant field inside your class be given public access control, since it can't be modified
 - methods can be public, private, protected - depending on whether you want them to be called from outside the object or from within the object
+- things that don't have an access modifier specified will be available in their package only
+- a class can be public or unspecified (meaning it's visible only inside its package)
 
 Inheritance
 - allows you to build a new datatype using an existing one as the foundation
