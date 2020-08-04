@@ -1,20 +1,24 @@
 package course.chapter9.objects3;
 
 public class Customer {
+    // fields
     String firstName;
     String lastName;
     Account acc;
 
+    // constructors
     Customer(String fn, String ln) {
         firstName = fn;
         lastName = ln;
     }
 
     Customer() {
-        firstName = "John";
-        lastName = "Doe";
+        this("John", "Doe");
+//        firstName = "John";
+//        lastName = "Doe";
     }
 
+    // methods
     void addAccount() {
         this.addAccount(0);
     }
