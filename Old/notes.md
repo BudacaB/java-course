@@ -160,3 +160,35 @@ Methods - can return a value of any type, including a primitive datatype, an obj
     - the method's return type is not part of the signature
 Constructor - special method used to initialize an object
     - if you don't write any constructors for your class, the compiler will provide a default no-arg constructor which will be removed as soon as any constructor is provided
+
+Format strings
+    - made out of fixed text and one or more format specifiers
+    - for character and numeric types - %[argument_index$][flags][width][.precision]conversion
+    - each format specifier always starts with a %
+    - argument_index indicates the position of the argument in the argument list - e.g. 1$ (1st arg) ; 2$ (2nd arg)
+    - flags is used to modify the format of the output - e.g. the - flag specifies that the output should be left justified
+    - width indicates the min number of chars to output
+    - precision is used to restrict the number of chars to output - for floats this is the number of digits after the decimal
+    - conversion is a required char that specifies how the arg should be formatted - e.g. the f conversion indicates that a floating point decimal value is being formatted
+
+toString() - used to make it easier to print your object's state
+
+Comparing objects
+- with primitive datatypes, the == operator compares values
+- with reference variables, the == operator compares references; it evaluates to true if both references refer to the same object
+    - even if 2 objects have the exact same state, == never returns true for variables referring to the two different objects
+- to perform value comparison of objects, provide an equals() method for your class
+    - should be a public boolean method, which, given a reference to another object of the same class, will compare its fields to the appropiate fields of the invoking object
+    - use the this keyword to refer to the current (invoking) object
+- you should also write a hashCode() method that returns the same int whenever two objects are equal() to eachother
+    - this is especially important if you plan to use your objects within data structures whose algorithms rely on an object's hash code in order to function properly
+- if two objects are equal (have the same value / their references are same), they should have the same hash code
+- if two objects have the same hash code it doesn't mean they are equal
+
+Java
+- has primitive datatypes - byte, short, int, long, float, double, char and boolean
+- has reference datatypes - everything else - String, StringBuilder, StringBuffer, objects etc.
+- when you pass a primitive to a method, it is passed by value - a copy of the primitive is sent to the method
+- when you pass an object to a method, its reference is passed by value
+    - a copy of the reference is sent into the method
+    - if the method modifies its parameter, it will modify the original object
