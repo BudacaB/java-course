@@ -204,3 +204,11 @@ Primitive-type wrapper classes - for each Java primitive there is a wrapper clas
 - autoboxing - easily convert between a wrapper object and its primitive counterpart
     Double wrapper = 34.5; // Double wrapper = new Double(34.5);
     double primitive = wrapper; // double primitive = wrapper.doubleValue();
+    
+Enums - use the 'enum' keyword to declare a typesafe enumeration of values
+    public enum Color { RED, GREEN, BLUE }
+    Color color = Color.RED;
+- generates a new class behind the scenes
+- each enum constant is declared as public static final field
+- no public constructor for the class - can't create new enum constants at runtime
+- provides both an equals() and toString()
