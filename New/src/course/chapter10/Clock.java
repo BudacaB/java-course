@@ -61,6 +61,10 @@ public class Clock {
                 '}';
     }
 
+    protected void finalize() {
+        System.out.println("finalize called");
+    }
+
     public static void main(String[] args) {
         Clock clock = new Clock(10, 18, 0);
         int theHour = 19;

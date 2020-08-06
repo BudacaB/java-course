@@ -192,3 +192,15 @@ Java
 - when you pass an object to a method, its reference is passed by value
     - a copy of the reference is sent into the method
     - if the method modifies its parameter, it will modify the original object
+    
+Destroying objects
+- automatic - the JVM uses Garbage Collection to deallocate the memory (once the last reference to the object is lost)
+- if the object has a finalize() method, the VM will invoke it just before the object is garbage collected
+
+Primitive-type wrapper classes - for each Java primitive there is a wrapper class, they:
+- provide useful constants (e.g. MAX_VALUE) and static methods (e.g. parseType() converts a String to a primitive type)
+- allow generic container classes (arrays, lists etc.) to store primitives 
+- convert a primitive to a string with toString() or by concatenation (e.g. "" + 42)
+- autoboxing - easily convert between a wrapper object and its primitive counterpart
+    Double wrapper = 34.5; // Double wrapper = new Double(34.5);
+    double primitive = wrapper; // double primitive = wrapper.doubleValue();
