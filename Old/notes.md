@@ -107,6 +107,7 @@ Access control
 - occasionally you might have a constant field inside your class be given public access control, since it can't be modified
 - methods can be public, private, protected - depending on whether you want them to be called from outside the object or from within the object
 - things that don't have an access modifier specified will be available in their package only
+- field with unspecified access control modifiers are visible in their package
 - a class can be public or unspecified (meaning it's visible only inside its package)
 
 Inheritance
@@ -119,6 +120,7 @@ Inheritance
 - other terminology: base class / derived class, parent class / child class, generalized class / specialized class
 - an object that is created from a subclass is not only an instance of the subclass, but also of the superclass
 - this creates an 'is-a' relationship between the superclass, and the subclass - a timestamp 'is a' date, a toaster 'is an' appliance, a jet 'is an' airplane
+- constructors are not inherited
 
 Polymorphism
 - when one class inherits from another class an 'is-a' relationship is built
@@ -212,3 +214,39 @@ Enums - use the 'enum' keyword to declare a typesafe enumeration of values
 - each enum constant is declared as public static final field
 - no public constructor for the class - can't create new enum constants at runtime
 - provides both an equals() and toString()
+
+Inheritance2
+- a Java class can inherit from only one superclass
+- if you dont explicitly extend a superclass when you create a class, the new class will inherit from the java.lang.Object
+- a class declard as 'final' can't be extended - also allows the compiler to perform some optimizations
+
+Casting
+- a variable can refer to an object of its type, or a subclass type - e.g. Person p = new Employee();
+    - the Employee object returned by the 'new' operator is implicitly cast (upcast) to a Person before the assigment takes place
+    - upcasting - casting a subclass object up to its superclass datatype
+    - this cast works because any field or method you may try to access through the superclass variable is guaranteed to exist in the subclass
+- downcasting - explicitly casting a superclass to be a subclass will only work if the superclass variable references a subclass object
+    - e.g.:
+    Person p = new Employee(); 
+    Employee e = (Employee) p;
+    
+    - if p doesn't refer to an Employee (or one of its subclasses), a ClassCastException will be thrown, e.g.:
+    Person p = new Person();
+    Employee e = (Employee) p;
+    
+    - use the instanceof operator to avoid that exception
+    if (p instanceof Employee) {
+        Employee e = (Employee) p;
+    }
+
+Method overloading
+- two methods with the same name but diff param types or number of params
+
+Method overriding
+- two methods with the same name and the same params
+- one method is in a superclass and the other is in a subclass
+- a subclass can define a method that overrides a method in the superclass
+- the subclass method must have the same signature as the superclass method
+- @Override annotation - makes sure we override correctly - spelling etc.
+- the subclass method mustn't be less accessible than the superclass method
+- a 'final' method can't be overridden by a subclass
