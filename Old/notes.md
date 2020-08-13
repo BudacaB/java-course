@@ -250,3 +250,14 @@ Method overriding
 - @Override annotation - makes sure we override correctly - spelling etc.
 - the subclass method mustn't be less accessible than the superclass method
 - a 'final' method can't be overridden by a subclass
+
+Polymorphism2
+- by default, the VM uses dynamic lookup to determine which method to invoke
+    - the method that is called depends on the datatype of the target object
+    - a method called on an Employee object will call the Employee method, even if it's called through a Person reference
+    Person p = new Employee();
+    p.getName() // calls Employee's method
+- allows you to create objects of diff (but related) types and manage them all in the same way, using the same code
+    - you might store objects in a single collection, like an array
+- final methods and methods in final classes, are statically bound, and the compiler may inline the code if it's short enough
+    - since subclasses can't override these methods, the compiler, instead of the VM, can bind the method to its invocation
