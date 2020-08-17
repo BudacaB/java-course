@@ -32,18 +32,21 @@ public class Employee extends Person {
     @Override
     public String getName() {
         if (title.equals("Doctor"))
-            return "Dr. " + firstName + " " + lastName;
-        return firstName + " " + lastName;
+//            return "Dr. " + firstName + " " + lastName;
+//        return firstName + " " + lastName;
+            return "Dr. " + super.getName();
+        return super.getName();
     }
 
     public static void main(String[] args) {
 
         Person[] persons = new Person[3];
-        persons[0] = new Person("Doe","Jane", 71);
+        persons[0] = new Person("Doe", "Jane", 71);
         persons[1] = new Employee("Smith", "John", 45, "Doctor", 275000);
         persons[3] = new Student();
 
         for (Person person : persons) {
             System.out.println(person.getName());
         }
+    }
 }

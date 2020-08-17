@@ -2,9 +2,9 @@ package course.chapter11;
 
 public class Person {
 
-    protected String firstName;
-    protected String lastName;
-    protected int age;
+    private String firstName;
+    private String lastName;
+    private int age;
 
     public Person() {
         this("", "", 0);

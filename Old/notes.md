@@ -261,3 +261,8 @@ Polymorphism2
     - you might store objects in a single collection, like an array
 - final methods and methods in final classes, are statically bound, and the compiler may inline the code if it's short enough
     - since subclasses can't override these methods, the compiler, instead of the VM, can bind the method to its invocation
+    
+Super
+- keyword that can be used in the subclass method to refer to the superclass
+- user super(arg1 ... ) to invoke a superclass constructor
+- goes up only one level
