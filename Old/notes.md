@@ -266,3 +266,15 @@ Super
 - keyword that can be used in the subclass method to refer to the superclass
 - user super(arg1 ... ) to invoke a superclass constructor
 - goes up only one level
+
+Abstract class
+- can't be instantiated
+- must be extended
+    - used just to inherit from
+- can have fields
+- can have concrete methods
+    - can have abstract methods - methods without implementation
+    - ! abstract methods need to be overridden
+    - if the class has abstract methods, the class must be abstract
+- final class and abstract class are opposites
+
