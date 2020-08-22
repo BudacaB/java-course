@@ -1,18 +1,17 @@
 package course.chapter12;
 
-public abstract class Light implements Switchable{
-
+public class GasFireplace implements Switchable {
     private Status status;
 
+    @Override
     public void turnOn() {
         status = Status.ON;
     }
 
+    @Override
     public void turnOff() {
         status = Status.OFF;
     }
-
-    public abstract void changeBulb();
 
     @Override
     public String toString() {

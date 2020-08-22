@@ -276,5 +276,24 @@ Abstract class
     - can have abstract methods - methods without implementation
     - ! abstract methods need to be overridden
     - if the class has abstract methods, the class must be abstract
-- final class and abstract class are opposites
+- final classes and methods and abstract classes and methods are opposites
+
+Interface
+- is like an abstract class with all abstract methods
+- the only fields that are allowed are static finals
+    - no instance fields
+- the only methods that are allowed are abstract methods
+    - every method is implicitly abstract
+    - every method is implicitly public
+    - no concrete methods
+- classes "implement" interfaces
+- a class can implement 0 to many interfaces
+- specifies behavior by declaring methods
+- contain no actual implementation code
+- any class that implements an interface must support the behavior by writing the methods
+- class inheritance fulfills an 'is-a' relationship, interface implementation can be defined as an 'is' relationship
+    - a HalogenLight is a Light; a HalogenLight is Switchable
+- a class may extend only one class but may implement many interfaces
+- an interface can extend (inherit from) another interface
+    - a class the implements the extended interface must implement all inherited methods
 
