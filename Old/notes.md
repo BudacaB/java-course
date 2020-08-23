@@ -296,4 +296,7 @@ Interface
 - a class may extend only one class but may implement many interfaces
 - an interface can extend (inherit from) another interface
     - a class the implements the extended interface must implement all inherited methods
+- interfaces are another way to support polymorphism
+    - a variable declared of an interface type can refer to an object of any class that implements that interface (e.g. Switchable s = new Fan();)
+    - e.g. an array of interface type can be created to contain objects that are based upon classes that implement that interface
 
