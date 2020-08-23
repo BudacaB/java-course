@@ -299,4 +299,14 @@ Interface
 - interfaces are another way to support polymorphism
     - a variable declared of an interface type can refer to an object of any class that implements that interface (e.g. Switchable s = new Fan();)
     - e.g. an array of interface type can be created to contain objects that are based upon classes that implement that interface
+    
+Collections
+- collections are objects that hold and manipulate other objects, in a well-defined way (e.g. an array could be a type of collection)
+- a collection class can be defined to contain data of type Object and can then hold objects of any given class type, since all objects can be implicitly cast to type Object
+- downcasting is necessary to retrieve the original type from the collection
+    - e.g. String st = (String) p1.getFirst();
+        Integer i = (Integer) p2.getFirst();
+    - downcasting is prove to ClassCastException, unless you check the datatype with the instanceof operator
+        if (p2.getFirst() instanceof String)
+            String s = (String) p2.getFirst();
 
