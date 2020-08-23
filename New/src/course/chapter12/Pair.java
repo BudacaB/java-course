@@ -1,27 +1,27 @@
 package course.chapter12;
 
-public class Pair {
-    private Object first;
-    private Object second;
+public class Pair <T>{
+    private T first;
+    private T second;
 
-    public Pair(Object one, Object two) {
+    public Pair(T one, T two) {
         this.first = one;
         this.second = two;
     }
 
-    public Object getFirst() {
+    public T getFirst() {
         return first;
     }
 
-    public void setFirst(Object first) {
+    public void setFirst(T first) {
         this.first = first;
     }
 
-    public Object getSecond() {
+    public T getSecond() {
         return second;
     }
 
-    public void setSecond(Object second) {
+    public void setSecond(T second) {
         this.second = second;
     }
 }

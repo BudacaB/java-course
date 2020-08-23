@@ -309,4 +309,14 @@ Collections
     - downcasting is prove to ClassCastException, unless you check the datatype with the instanceof operator
         if (p2.getFirst() instanceof String)
             String s = (String) p2.getFirst();
+            
+Generics
+- <T>
+- Java introduced generics (also called parameterized types) to simplify a developer's code when using collections
+- the collection object is passed the datatype of the objects it will store when it is instantiated
+- using generics you no longer have to downcast when retrieving elements from a collection 
+    - the compiler checks the the datatype that you will retrieve so there is no danger of ClassCastException
+- a collection can even store multiple, different datatypes, e.g. <T1,T2>
+    - Pair<String, Int> = new Pair<>("ABC", 1);
+ 
 
