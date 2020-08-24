@@ -318,5 +318,18 @@ Generics
     - the compiler checks the the datatype that you will retrieve so there is no danger of ClassCastException
 - a collection can even store multiple, different datatypes, e.g. <T1,T2>
     - Pair<String, Int> = new Pair<>("ABC", 1);
+    
+Comparable
+- a class that implements Comparable is required to implement the compareTo() method
+    public int compareTo(Point other) { // comparison logic }
+- compareTo() returns an int that determines whether the target object is less than, greater than or equal to the passed-in object
+    - return a negative value if the target object is less than the passed-in object
+    - return a positive value if the target object is greater than the passed-in object
+    - return zero for equality
+- specify what you wish to compare against using a generic declaration within the 'implements' clause
+    public class Point implements Comparable<Point> {
+    - this determines the datatype of the parameter to your compareTo() method
+- any client that wishes to sort Comparable objects can use the compareTo() method to determine the 'natural ordering' of the objects
+    - the collection classes java.util.TreeSet and java.util.TreeMap rely on Comparable to sort objects
  
 
