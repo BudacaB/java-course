@@ -1,6 +1,6 @@
 package course.chapter12lab;
 
-public abstract class Shape {
+public abstract class Shape implements Drawable, Comparable<Shape> {
     private int xCoordinate;
     private int yCoordinate;
     private Color color;
@@ -35,5 +35,15 @@ public abstract class Shape {
         this.color = color;
     }
 
-    public abstract int getArea();
+    public abstract float getArea();
+
+    @Override
+    public int compareTo(Shape other) {
+        if (this.getArea() < other.getArea())
+            return -1;
+        else if (this.getArea() > other.getArea())
+            return 1;
+        else
+            return 0;
+    }
 }
