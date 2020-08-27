@@ -331,5 +331,16 @@ Comparable
     - this determines the datatype of the parameter to your compareTo() method
 - any client that wishes to sort Comparable objects can use the compareTo() method to determine the 'natural ordering' of the objects
     - the collection classes java.util.TreeSet and java.util.TreeMap rely on Comparable to sort objects
+    
+Packages
+- a package is a convenient way of grouping classes that have related functionality, but may not be in the same file
+- each .java file may specify that it's part of a package
+- package names will correspond to directory names
+- the Java API groups classes into packages with related functionality
+    - java.lang - basic language classes
+    - java.sql - database access classes
+    - java.util - general utility classes
+    - java.util.regex - regular expression utility classes etc.
+- since classes may be loaded across the internet, packages reduce possibilities of namespace collisions (e.g. two packages can both contain a List class)
  
 
