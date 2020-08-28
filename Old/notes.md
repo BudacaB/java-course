@@ -343,4 +343,19 @@ Packages
     - java.util.regex - regular expression utility classes etc.
 - since classes may be loaded across the internet, packages reduce possibilities of namespace collisions (e.g. two packages can both contain a List class)
  
-
+The import statement
+- to use a class from another package you can qualify the class name with the package name
+    java.util.ArrayList a = new java.util.ArrayList();
+- the import statement allows you to use the package's classes without fully specifying the package name each time
+    import packagename.*;
+    - the package's classes become part of the current program's namespace
+- you may import an entire package (with *) or a single class - there is no memory or code size penalty for using the wild card
+- references to classes from an imported package do not need to be preceded by the package name
+    - java.util.ArrayList can be specified as ArrayList
+- if two imported packages define a class with the same name, you must fully specify the name of the class that you are trying to use
+- you can also use static imports to save the typing - any ref to a static field or method can be left unqualified
+    import static java.lang.System.out;
+    out.println("Hello");
+    - you can also use the wildcard
+    import static java.lang.Math.*;
+    double area = PI * pow(radius, 2);
