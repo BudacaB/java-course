@@ -359,3 +359,17 @@ The import statement
     - you can also use the wildcard
     import static java.lang.Math.*;
     double area = PI * pow(radius, 2);
+    
+CLASSPATH and Import
+- at runtime, the Application Class Loader (part of JVM) searches for .class bytecode files in the application classpath
+    - by default the application classpath is the current directory
+    - you can override the default by setting the environment variable CLASSPATH
+    - any of the directories in the CLASSPATH may have subdirectories; these are the package directories
+    - java (as well as other JDK utilities) has a flag, -classpath, that overrides the CLASSPATH variable
+- CLASSPATH or -classpath, if set, must include the directories containing any classes you create
+    - the current directory represented by ".", on most systems is usually placed first
+    - any project directories that contain package subdirectories must be specified
+- for Java to load classes from these packages/directories, the file permission must grant access
+- you can have a JAR file (similar to a zip file) - contains compiled java classes
+    - zipped up version of a bunch of class files
+    - used to distribute java code - maintains the directory structure 
