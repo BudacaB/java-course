@@ -386,3 +386,16 @@ Package scope
 - protected - visible to subclasses anywhere, visible to other classes in the same package
 - <unspeficied> (or default) (or package) - visible to other classes in the same package 
 - private - only visible within the class in which the field/method is declared
+
+Exceptions
+- upon encountering a condition in which it can't continue, a method will throw an exception
+    - an exception is an object whose type, data, and methods describe the problem that caused it to be thrown
+- Java support two types of exceptions - checked and unchecked
+    - the compiler guarantees that all checked exceptions are handled in code
+    - this is not the case for unchecked exceptions - you don't have to worry about / deal with them - you should but aren't required to
+- when a method calls another method that can throw a checked exception, the calling method must either:
+    - catch the exception the called method throws
+    - declare that it, the caller, might itself throw the same type of exception
+- an exception propagates up the call chain until it is caught
+    - if a method does not catch an exception, the method's caller, will be thrown the same exception, and so on
+- if an unchecked exception is not caught, the default handler in the VM prints a stack trace and then exits
