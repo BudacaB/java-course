@@ -372,4 +372,17 @@ CLASSPATH and Import
 - for Java to load classes from these packages/directories, the file permission must grant access
 - you can have a JAR file (similar to a zip file) - contains compiled java classes
     - zipped up version of a bunch of class files
-    - used to distribute java code - maintains the directory structure 
+    - used to distribute java code - maintains the directory structure
+    
+Defining packages
+- the package keyword defines a package - must be the first non-comment line
+- the package can be a single name or a specialized dot-separated name
+- package names correspond to directories
+- it's a good idea to pick package names that won't conflict with other groups in your company; this will allow you to share classes with one another
+- if you use your Internet domain as part of your package name, you're pretty much guaranteed a unique namespace - in fact Oracle recommends this practice 
+
+Package scope
+- public - visible anywhere 
+- protected - visible to subclasses anywhere, visible to other classes in the same package
+- <unspeficied> (or default) (or package) - visible to other classes in the same package 
+- private - only visible within the class in which the field/method is declared
