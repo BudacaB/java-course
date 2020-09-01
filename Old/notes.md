@@ -399,3 +399,16 @@ Exceptions
 - an exception propagates up the call chain until it is caught
     - if a method does not catch an exception, the method's caller, will be thrown the same exception, and so on
 - if an unchecked exception is not caught, the default handler in the VM prints a stack trace and then exits
+
+Catching exceptions
+- to handle a potential exception, enclose the code which may throw the exception in a try block
+- a catch block contains code which handles the specific exception type thrown - the catch block must immediately follow the try block
+- there may be multiple catch blocks following a try block, to handle different types of exceptions
+    - a catch catches all exceptions of a given class, of any of its subclasses
+    - subclass exceptions need to be caught before their superclass
+    - as of Java 7 you can combine multiple catch blocks into one using a new syntax called multi-catch (if they're all doing the same thing)
+        - simply use the pipe simbol (|) to separate the exceptions you intend to catch
+- once an exception is thrown, execution flow immediately transfers out of the try block to the first catch block matching the class, or a superclass, of the exception
+    - any statement remaining in the try block are not executed
+- if the catch block does not return, exit or throw its own exception, execution will continue below the last catch block
+- (System.err.println uses the red color)
