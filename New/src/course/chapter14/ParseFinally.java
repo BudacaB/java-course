@@ -3,7 +3,7 @@ package course.chapter14;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
-public class ParseTest {
+public class ParseFinally {
     public static void main(String[] args) {
         NumberFormat format = NumberFormat.getCurrencyInstance();
         String s;
@@ -17,9 +17,9 @@ public class ParseTest {
         } catch (ParseException e) {
             System.err.println("Invalid string \"" + s + "\"");
             return;
-        } catch (NumberFormatException e) {
-            System.err.println(e);
+        } finally {
+            System.out.println("Original string was \"" + s + "\"");
         }
-        System.out.println("here");
+
     }
 }

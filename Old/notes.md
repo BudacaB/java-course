@@ -412,3 +412,23 @@ Catching exceptions
     - any statement remaining in the try block are not executed
 - if the catch block does not return, exit or throw its own exception, execution will continue below the last catch block
 - (System.err.println uses the red color)
+
+The finally block
+- contains code that will always execute after the preceding try block, whether or not any exceptions are thrown
+    - place the 'finally' block below all catch blocks, if there are any
+- any return, continue, break, or throw inside the try block will still cause the 'finally' block to execute
+
+Exception methods
+- all exception classes extend java.lang.Exception, which extends java.lang.Throwable
+- Throwable methods provide diagnostic info
+    - getMessage() returns a descriptive message
+    - printStackTrace() shows where the exception occurred 
+    - toString() displays the exception type
+    - sometimes a catch block will throw another exception
+        - to find info about the first exception that was thrown, use the getCause() method
+- only Throwable objects can be thrown
+    - Error objects are not supposed to be caught and handled, they are considered fatal
+    - RuntimeExceptions are unchecked, they do not have to be declared or caught to compile, but will still terminate the program execution when encountered
+    - for practical purposes, you only need to deal with Exception, and subclasses of Exception, in your code
+    
+
