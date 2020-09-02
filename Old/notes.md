@@ -465,3 +465,26 @@ Errors and RuntimeExceptions
     for (int i = 0; i < people.length; i++)
         people[i].display();
 - Errors and RuntimeExceptions do not have to be declared as part of a method signature; they are unchecked
+
+Streams
+- all Java I/O is conducted through streams, which are ordered sequences of data
+    - a steam is either an input stream, an output stream, or both at the same time
+- streams aren't just for file I/Ol; their uses include:
+    - communication across sockets
+    - I/O to or from a URL object, including a servlet (Java program that runs on a web server)
+    - storing an retrieving data based on a String, char[] or byte[]
+    - reading and writing Large Objects in a database with JDBC
+    - serialization of objects
+- almost all of the methods in Java's I/O classes throw java.io.IOException (or one of its children)
+
+Bytes vs. Characters
+- we can characterize any Java I/O stream as either a byte stream or a character stream
+- byte streams always deal with data as streams of 8-bit bytes
+    - byte streams are referred to in Java as streams, with class names like InputStream and OutputStream
+    - any time binary, non-textual data is being manipulated, you will use a stream
+    - an int written with an output stream is written as 4 bytes, not as readable text
+- character streams use 16-bit Unicode characters
+    - character streams are referred to in Java as readers and writers, with class names like FileReader and FileWriter
+    - any time textual data is being manipulated, you will use a reader or writer.
+    - an int written with a writer is written as a sequence of characters; this is a readable format
+- for every input stream there is usually a corresponding reader class; for every output stream there is usually a corresponding writer class
