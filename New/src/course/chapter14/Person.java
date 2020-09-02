@@ -2,9 +2,9 @@ package course.chapter14;
 
 public class Person {
     private String name;
-    private Integer age;
+    private int age;
 
-    public Person(String n, Integer a) throws InvalidDataException, BadAgeException {
+    public Person(String n, int a) throws InvalidDataException, BadAgeException {
         if (n == null || n.equals("")) {
             throw new InvalidDataException(n);
         }

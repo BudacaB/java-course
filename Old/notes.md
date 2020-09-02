@@ -488,3 +488,25 @@ Bytes vs. Characters
     - any time textual data is being manipulated, you will use a reader or writer.
     - an int written with a writer is written as a sequence of characters; this is a readable format
 - for every input stream there is usually a corresponding reader class; for every output stream there is usually a corresponding writer class
+
+Converting byte streams to character streams
+- what can you do if you're given a byte stream and want a character stream?
+    - an example is System.in, which is an InputStream object
+- you can use the InputStreamReader class or the OutputStreamWriter class to convert a byte stream to a character stream
+    - you simply pass the existing stream to the constructor
+    InputStreamReader conv = new InputStreamReader(System.in);
+- often, the resulting objects are chained along to another constructor
+BufferedReader buf = new BufferedReader(conv);
+    - of course, this can be collapsed into one statement:
+    BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+    
+The File object
+- you can use a File object to represent the path and the filename of a given file
+File f = new File("./input.txt");
+    - the file's length, full directory location, and associated info can be retrieved from the File object
+        - getName()
+        - getCanonicalPath()
+        - length()
+    - the platform-specific path separator can also be used for more generic naming of paths
+    File f = new File("." + File.separator + "input.txt");
+    - a File does not need to represent a file stream that is currently open
