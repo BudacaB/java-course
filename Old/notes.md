@@ -431,4 +431,11 @@ Exception methods
     - RuntimeExceptions are unchecked, they do not have to be declared or caught to compile, but will still terminate the program execution when encountered
     - for practical purposes, you only need to deal with Exception, and subclasses of Exception, in your code
     
-
+Declaring exceptions
+- a method with code that might generate an exception must either
+    - encapsulate the code in a try block followed by appropriate catch blocks OR
+    - declare that it may throw the exception
+- users of your method will understand what exceptions they need to either catch or declare
+    - the exceptions that a method might throw are part of its public interface
+- code that can generate uncaught, undeclared, checked exceptions will not compile
+- to find out what exceptions a standard Java method might throw, look for the 'throws' clause in the documentation
