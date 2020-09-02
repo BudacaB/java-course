@@ -6,10 +6,10 @@ public class PeopleTest {
 
         people = new Person[3];
         try {
-            people[0] = new Person("Bob");
-            people[1] = new Person("Jane");
-            people[2] = new Person("John");
-        } catch (InvalidDataException e) {
+            people[0] = new Person("Bob", 20);
+            people[1] = new Person("Jane", 25);
+            people[2] = new Person("John",33);
+        } catch (InvalidDataException | BadAgeException e) {
             System.err.println(e.getMessage());
         }
 
