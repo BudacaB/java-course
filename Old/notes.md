@@ -439,3 +439,29 @@ Declaring exceptions
     - the exceptions that a method might throw are part of its public interface
 - code that can generate uncaught, undeclared, checked exceptions will not compile
 - to find out what exceptions a standard Java method might throw, look for the 'throws' clause in the documentation
+
+Defining and throwing exceptions
+- to explicitly throw an exception
+    - instantiate an exception object
+    - invoke the throw statement using the exception object - throw new InvalidDataException();
+- if no existing exception class is appropiate, define a new one - class InvalidDataException extends Exception {}
+    - user-defined exception classes should extend Exception
+    - you can add new methods and data which can be used in a catch handler
+        - often, just knowing the type of the exception that was thrown is all the info you need
+    - you can write catch blocks to handle your new exception type
+    catch(InvalidDataException e) {
+        System.err.println(e.getMessage());
+    }
+    
+Errors and RuntimeExceptions
+- Error extends Throwable and is a peer of Exception
+- Errors are severe malfunctions that are not intended to be caught
+    - running out of memory or missing libraries are situations that could cause Errors to be thrown
+    - the Java VM generates Errors; you should not create or throw them yourself
+    - handling of these problems is usually very difficult and is not expected; the program should terminate
+- RuntimeException is a child of Exception and has several subclasses
+    - these exceptions should not occur in properly written code, therefor handling them is not required by the compiler
+    - for example if you always check the length of an array, you will never get an ArrayIndexOutOfBoundsException
+    for (int i = 0; i < people.length; i++)
+        people[i].display();
+- Errors and RuntimeExceptions do not have to be declared as part of a method signature; they are unchecked
