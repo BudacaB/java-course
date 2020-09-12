@@ -510,3 +510,30 @@ File f = new File("./input.txt");
     - the platform-specific path separator can also be used for more generic naming of paths
     File f = new File("." + File.separator + "input.txt");
     - a File does not need to represent a file stream that is currently open
+
+Binary input and output
+- classes such as FileInputStream and FileOutputStream are used for binary I/O, but only provide read() and write() methods that expect bytes or byte arrays
+    - this is usually too cumbersome to deal with
+- you can create a DataInputStream or DataOutputStream object to convert Java primitive datatypes into sequences of bytes
+- create a DataInputStream by passing an InputStream to its constructor
+    FileInputStream finput = new FileInputStream( filename );
+    DataInputStream dinput = new DataInputStream( finput )
+- DataInputStream and DataOutputStream are typically used in pairs to read and write a binary file, or send and receive binary data through a socket
+
+--- 
+- (Wrapper aka Filter aka Decorator)
+---
+
+PrintWriter Class
+- use a PrintWriter object when you need to output data as text 
+    - this data may be primitive types, or objects from your own classes
+- you can construct a PrintWriter from either an OutputStream or another Writer
+    FileWriter fw = new FileWriter("test.txt);
+    PrintWriter pw = new Printwriter(fw);
+- PrintWriter provides several forms of print() and println() that take each of the primitive types and convert them to Strings before printing them
+    pout.print( appDimensions.width );
+    - print and println() also have versions that take Object, and call toString() on that object
+    System.out.println(user1); // calls user1.toString();
+    - use PrintWriter's printf() method for formatted output
+- the PrintStream class has all of the same methods, but works with binary data instead of character data
+    - System.out and System.err are PrintStream objects

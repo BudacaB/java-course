@@ -2,13 +2,13 @@ package course.chapter15;
 
 import java.io.*;
 
-public class Read {
+public class ReadWriteText {
 
-    static byte[] bytes;
+    static char[] chars;
 
     public static void main(String[] args) {
-        String filename = "/home/bogdan/Pictures/ranked.png";
-        String filename2 = "/home/bogdan/Pictures/ranked2.png";
+        String filename = "/home/bogdan/Desktop/myfile.txt";
+        String filename2 = "//home/bogdan/Desktop/myfile2.txt";
 
         readFileIntoArray(filename);
         writeArrayToFile(filename2);
@@ -16,21 +16,21 @@ public class Read {
     }
 
     static void readFileIntoArray(String fn) {
-        FileInputStream fis = null;
+        FileReader fr = null;
         File f = new File(fn);
         long length = f.length();
         System.out.println(length);
 
         try {
-            fis = new FileInputStream(f);
-            bytes = new byte[(int) length];
-            fis.read(bytes);
-            System.out.println(bytes);
+            fr = new FileReader(f);
+            chars = new char[(int) length];
+            fr.read(chars);
+            System.out.println(chars);
         } catch (IOException e) {
             System.err.println(e);
         } finally {
             try {
-                fis.close();
+                fr.close();
             } catch (IOException e) {
                 System.err.println(e);
             }
@@ -38,18 +38,18 @@ public class Read {
     }
 
     static void writeArrayToFile(String fn) {
-        FileOutputStream fos = null;
+        FileWriter fw = null;
         File f = new File(fn);
 
         try {
-            fos = new FileOutputStream(f);
-            fos.write(bytes);
-            System.out.println(bytes);
+            fw = new FileWriter(f);
+            fw.write(chars);
+            System.out.println(chars);
         } catch (IOException e) {
             System.err.println(e);
         } finally {
             try {
-                fos.close();
+                fw.close();
             } catch (IOException e) {
                 System.err.println(e);
             }
