@@ -537,3 +537,14 @@ PrintWriter Class
     - use PrintWriter's printf() method for formatted output
 - the PrintStream class has all of the same methods, but works with binary data instead of character data
     - System.out and System.err are PrintStream objects
+    
+Reading and writing objects
+- you can read and write an object to a stream using ObjectInputStream and ObjectOutputStream classes
+    - these classes contain readObject() and writeObject() methods, respectively
+        - the object is written in binary format and is called a serialized object
+        - the readObject() method throws ClassNotFoundException if it can't find the class definition (.class file) for the serialized object
+    - any object that you send to the readObject() and writeObject() method needs to implement the Serializable interface
+    public class Book implements Serializable {}
+        - the are no methods defined in this interface, you simply say 'implements Serializable' and you're done 
+    - these classes contain additional methods that are used for customizing the serialization process
+- objects can be used in files, written to a DB, or sent across a socket or pipe - all using the ObjectInputStream and ObjectOutputStream classes
