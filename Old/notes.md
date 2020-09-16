@@ -304,8 +304,9 @@ Collections
 - collections are objects that hold and manipulate other objects, in a well-defined way (e.g. an array could be a type of collection)
 - a collection class can be defined to contain data of type Object and can then hold objects of any given class type, since all objects can be implicitly cast to type Object
 - downcasting is necessary to retrieve the original type from the collection
-    - e.g. String st = (String) p1.getFirst();
-        Integer i = (Integer) p2.getFirst();
+    - e.g. 
+    ```String st = (String) p1.getFirst();
+        Integer i = (Integer) p2.getFirst();```
     - downcasting is prove to ClassCastException, unless you check the datatype with the instanceof operator
         if (p2.getFirst() instanceof String)
             String s = (String) p2.getFirst();
@@ -449,9 +450,11 @@ Defining and throwing exceptions
     - you can add new methods and data which can be used in a catch handler
         - often, just knowing the type of the exception that was thrown is all the info you need
     - you can write catch blocks to handle your new exception type
+    ```
     catch(InvalidDataException e) {
         System.err.println(e.getMessage());
     }
+  ```
     
 Errors and RuntimeExceptions
 - Error extends Throwable and is a peer of Exception
@@ -462,8 +465,9 @@ Errors and RuntimeExceptions
 - RuntimeException is a child of Exception and has several subclasses
     - these exceptions should not occur in properly written code, therefor handling them is not required by the compiler
     - for example if you always check the length of an array, you will never get an ArrayIndexOutOfBoundsException
+    ```
     for (int i = 0; i < people.length; i++)
-        people[i].display();
+        people[i].display();```
 - Errors and RuntimeExceptions do not have to be declared as part of a method signature; they are unchecked
 
 Streams
@@ -516,8 +520,9 @@ Binary input and output
     - this is usually too cumbersome to deal with
 - you can create a DataInputStream or DataOutputStream object to convert Java primitive datatypes into sequences of bytes
 - create a DataInputStream by passing an InputStream to its constructor
+    ````
     FileInputStream finput = new FileInputStream( filename );
-    DataInputStream dinput = new DataInputStream( finput )
+    DataInputStream dinput = new DataInputStream( finput )```
 - DataInputStream and DataOutputStream are typically used in pairs to read and write a binary file, or send and receive binary data through a socket
 
 --- 
@@ -528,8 +533,9 @@ PrintWriter Class
 - use a PrintWriter object when you need to output data as text 
     - this data may be primitive types, or objects from your own classes
 - you can construct a PrintWriter from either an OutputStream or another Writer
+    ``````
     FileWriter fw = new FileWriter("test.txt);
-    PrintWriter pw = new Printwriter(fw);
+    PrintWriter pw = new Printwriter(fw);```
 - PrintWriter provides several forms of print() and println() that take each of the primitive types and convert them to Strings before printing them
     pout.print( appDimensions.width );
     - print and println() also have versions that take Object, and call toString() on that object
@@ -548,3 +554,18 @@ Reading and writing objects
         - the are no methods defined in this interface, you simply say 'implements Serializable' and you're done 
     - these classes contain additional methods that are used for customizing the serialization process
 - objects can be used in files, written to a DB, or sent across a socket or pipe - all using the ObjectInputStream and ObjectOutputStream classes
+
+Closing Streams
+- upon opening a stream, your program may require resources such as file handles or sockets
+    - you must remember to close your stream to release these resources
+    ```
+    FileReader fr = new FileReader("input.txt");
+    BufferedReader bReader = new BufferedReader(fr);
+
+    bReader.close();```
+- use a 'finally' block to ensure that a stream is closed whether or not an exception has occured
+    - since the close() method itself may throw an exception, your code may end up unwieldy with a with a try/catch block embedded within a 'finally' block
+- any object that implements the java.lang.AutoCloseable interface can take advantage of the 'try-with-resources' syntax introduced in Java 7
+    - a stream declared within parenthesis after the 'try' keyword will automatically be closed for you whether or not an exception occurs
+    ```try { BufferedReader bufIn = new BufferReader(new FileReader("input.txt")) ... }```
+    - any catch or finally blocks associated with a try-with-resources statement will run after the resouces are closed
