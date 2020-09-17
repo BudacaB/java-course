@@ -568,4 +568,4 @@ Closing Streams
 - any object that implements the java.lang.AutoCloseable interface can take advantage of the 'try-with-resources' syntax introduced in Java 7
     - a stream declared within parenthesis after the 'try' keyword will automatically be closed for you whether or not an exception occurs
     ```try { BufferedReader bufIn = new BufferReader(new FileReader("input.txt")) ... }```
-    - any catch or finally blocks associated with a try-with-resources statement will run after the resouces are closed
+    - any catch or finally blocks associated with --a try-with-resources statement will run after the resouces are closed
