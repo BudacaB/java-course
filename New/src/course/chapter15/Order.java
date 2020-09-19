@@ -1,9 +1,6 @@
 package course.chapter15;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Serializable;
+import java.io.*;
 
 public class Order implements Serializable {
     private int id;
@@ -26,13 +23,31 @@ public class Order implements Serializable {
         try {
             Order order = new Order(1, "potatoes");
 
-            FileWriter fw = new FileWriter("order.txt");
-            PrintWriter pw = new PrintWriter(fw);
+            // text
+//            FileWriter fw = new FileWriter("order.txt");
+//            PrintWriter pw = new PrintWriter(fw);
+//
+//            pw.println(order.getId());
+//            pw.println(order.getName());
+//
+//            pw.close();
 
-            pw.println(order.getId());
-            pw.println(order.getName());
+            // binary
+//            FileOutputStream fout = new FileOutputStream("order.dat");
+//            DataOutputStream dout = new DataOutputStream(fout);
+//
+//            dout.writeInt(order.getId());
+//            dout.writeUTF(order.getName());
+//
+//            dout.close();
 
-            pw.close();
+            // serialized
+            FileOutputStream fout = new FileOutputStream("order.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fout);
+
+            out.writeObject(order);
+            out.close();
+
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
