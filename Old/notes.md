@@ -569,3 +569,19 @@ Closing Streams
     - a stream declared within parenthesis after the 'try' keyword will automatically be closed for you whether or not an exception occurs
     ```try { BufferedReader bufIn = new BufferReader(new FileReader("input.txt")) ... }```
     - any catch or finally blocks associated with --a try-with-resources statement will run after the resouces are closed
+    
+The Collections Framework
+- a collection is an object that contains other objects
+    - the size of the collection can be altered after creation
+    - some collection types order elements, while others don't
+- interfaces and classes related to collections make up the Java Collections Framework
+- interfaces determine common behavior or characteristics of various collection types
+    - Collection is the parent interface of Set, List and Queue
+        - the Set interface describes a group of unique elements
+        - the List interface describes and ordered group of elements
+        - the Queue interface describes a group of elements accessed in a first-in, first-out (FIFO) manner
+    - the Map interface describes a group of key-value pairs, the keys being unique
+- abstract classes aid in the implementation of the interfaces
+- developers use implementation classes, including HastSet, ArrayList and HashMap
+    - legacy collections, such as Vector, are still supported
+- use the Iterator interface to access collection elements sequentially
