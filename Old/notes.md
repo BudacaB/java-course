@@ -617,3 +617,34 @@ Set implementation classes
     - LinkedHashSet guarantees that the order of iteration will be insertion-order
         - HashSet makes no guarantees about order
         - TreeSet sorts on each insertion and removal - an expensive operation
+        
+The List interface
+- List guarantees order
+    - the order you add elements into a list is the same order that you will iterate through them (insertion-order)
+- List allows duplicate elements
+    - an element that is stored in a List does not have to override the equals() or hashCode() methods
+    - many List implementations allow you to store multiple null elements
+- Use the add(element) method to add an element to the end of the List
+- List also provides methods for indexed access to the list elements
+    - add(index, element) allows you to insert an element into a specific position with the List
+    - get(index) allows you to retrieve an element from a specific position within the List
+    - all indexing is zero based
+- in addition to the iterator() method, List provides a listIterator() method that returns a ListIterator
+    - ListIterator extends Iterator, providing additional methods
+        - the add(element) method allows you to add an element to the underlying List
+        - the previous() method allows you to scroll backward through the List
+List implementation classes
+- an ArrayList is a resizable array that implements the List interaface
+    - an ArrayList follows an indexed ordering scheme similar to arrays
+    - it resembles the legacy container class Vector
+        - Vector methods are synchronized for thread safety, while ArrayList methods are not
+    - use an ArrayList when an application frequently needs to retrieve an element from the middle of the List
+        - positional access is fast, because each element in an ArrayList is associated with an index
+    - if no arguments specified, it's initialized with an array of default size 10
+        - once that is no longer enough, it will create a new, bigger array to point to, and copy the elements from the old one
+        - the old one will be up for garbage collection
+        - the latest element (e.g. a string), will have a pointer added to the next now available slot (11), which will point to the new String object
+- the LinkedList class implements a doubly-linked list
+    - like ArrayList objects, LinkedList objects can have duplicates and maintain the order of elements
+    - LinkedLists are used when an application needs to frequently insert elements into the beginning or the end of the list
+        - positional access is slower with LinkedList than with ArrayList, because only head and tail references are maintained
