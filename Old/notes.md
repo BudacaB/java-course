@@ -585,3 +585,35 @@ The Collections Framework
 - developers use implementation classes, including HastSet, ArrayList and HashMap
     - legacy collections, such as Vector, are still supported
 - use the Iterator interface to access collection elements sequentially
+
+The Set interface 
+- Sets are not allowed to store duplicate elements
+    - no two elements in a Set can be equal() to each other
+    - at most, one null element may be placed in a Set
+        - some implementations may disallow null elements
+- use the add (element) method to add an element to a Set
+    - the returned boolean maybe be used to determine whether an unique element was added
+        - true indicates the added element did not already exist in the Set
+        - false indicates that the Set was left unchanged because the element already existed
+- use the iterator() method to retrieve an Iterator object which you can use to step through a Set
+    - use hasNext() to determine if there are more elements in a collection
+    - use next() to then retrieve the next element
+    ```
+    Iterator<String> it = myset.iterator();
+    while (it.hasNext()) {
+        System.out.println(it.next());
+    }
+    ```
+- the SortedSet interface adds the guarantee that the Set will be ordered
+
+Set implementation classes
+- HashSet is a general-purpose implementation of the Set interface
+    - a HashSet contains unique objects whose order is not guaranteed
+    - the hashCode() and equals() methods work in combination to ensure that only unique objects are in the set
+        - your hashCode() method should return a unique hashcode, however you define 'unique'
+- TreeSet implements the SortedSet interface
+    - TreeSet extends the functionality of HashSet by sorting elements as they are added to and removed from the set
+- LinkedHashSet is a HashSet that implements the Set interface
+    - LinkedHashSet guarantees that the order of iteration will be insertion-order
+        - HashSet makes no guarantees about order
+        - TreeSet sorts on each insertion and removal - an expensive operation
