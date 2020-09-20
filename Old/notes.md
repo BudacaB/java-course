@@ -644,7 +644,70 @@ List implementation classes
         - once that is no longer enough, it will create a new, bigger array to point to, and copy the elements from the old one
         - the old one will be up for garbage collection
         - the latest element (e.g. a string), will have a pointer added to the next now available slot (11), which will point to the new String object
-- the LinkedList class implements a doubly-linked list
+- the LinkedList class implements a doubly-linked list (a points at b and b points back at a and so on)
     - like ArrayList objects, LinkedList objects can have duplicates and maintain the order of elements
     - LinkedLists are used when an application needs to frequently insert elements into the beginning or the end of the list
         - positional access is slower with LinkedList than with ArrayList, because only head and tail references are maintained
+        
+The Queue interface
+- Queue represents a data structure that holds elements before they are processed
+    - most Queue implementations use a FIFO ordering policy, but this is not guaranteed
+- use the offer(element) method to add an element to the Queue 
+    - the returned boolean will be true if the element was successfully added to the Queue
+        - some implementations impose restrictions, such as capacity bounds, that may prevent an element from being added to a Queue
+    - Collection's add(element) method can be used instead of offer(element)
+        - however, it throws an Exception if the element could not be added
+- Queue maintains a reference to the head of the data structure
+    - the poll() method returns the head element and removes it from the Queue
+        - calling poll() on an empty Queue will return a null value
+        - remove() is similar to poll(), but will throw a NoSuchElementException if the Queue is empty
+    - the peek() method returns the head element, but does not remove it
+        - calling peek() on an empty Queue will return a null value
+        - element() is similar to peek(), but will throw a NoSuchElementException if the Queue is empty
+        
+Queue implementation classes
+- LinkedList implements the Queue interface with an unbounded doubly-linked list of elements
+    - the ordering policy if FIFO
+    - LinkedList allows for null elements
+        - avoid adding nulls to the LinkedList, because the poll() method uses null as a special return value to indicate that the Queue is empty
+- PriorityQueue uses an internal unbounded priority heap to implement Queue
+    - the ordering of elements is based upon the elements sorted order
+        - the lowest element in sorted order is at the head of the PriorityQueue
+    - the null element is not allowed in a PriorityQueue
+    
+The Map interface
+- Maps allow you to store key/value pairs
+    - the key must be unique
+    - a key can map to only a single value
+- the Map interface makes no guarantees about order
+- use Map's methods to work with the Map
+    - the put(key, value) method adds a key/value pair to the Map
+    - the get(key) methods returns the value associated with the given key
+    - the containsKey(key) and containsValue(value) methods return true if the given parameter is in the Map
+- Map does not define an iterator() method
+    - use the keySet() method to retrieve a Set of keys that you can then iterate on
+    ```
+    Set<String> s = myMap.keySet();
+    Iterator<String> it = s.iterator();
+    
+    while (it.hasNext()) {
+        String key = it.next();
+        System.out.print("Key: " + key);
+        System.out.println("Value: " + myMap.get(key));
+    }
+    ```
+  
+Map implementation classes
+- HashMap stores keys and values using an underlying hash algorithm
+    - because it is based on a hash, puts and gets operate at a constant-time performance
+    - the iteration order of a HashMap is not guaranteed
+    - both keys and values are allowed to be null
+    - the legacy class Hashtable differs from HashMap in two ways:
+        - Hashtable does not allow null keys
+        - Hashtable's methods are synchronized, HashMap's are not
+- LinkedHashMap adds ordered iteration to HashMap
+    - the keySet() method will return a Set of keys that are in insertion order
+- TreeMap implements the SortedMap interface
+    - TreeMap objects are sorted based upon the key at the time of insertion and removal
+    - keySet() returns a Set of keys in ascending order
+        

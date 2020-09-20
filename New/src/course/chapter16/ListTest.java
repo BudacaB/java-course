@@ -11,8 +11,8 @@ public class ListTest {
         CD cd2 = new CD(2, "Prince", "The very best of Prince");
         CD cd3 = new CD(3, "Garth Brooks", "The Ultimate Hits");
 
-        List<CD> cdCollection = new ArrayList<>();
-//        List<CD> cdCollection = new LinkedList<>();
+//        List<CD> cdCollection = new ArrayList<>();
+        List<CD> cdCollection = new LinkedList<>();
 
         cdCollection.add(cd1);
         cdCollection.add(cd2);
