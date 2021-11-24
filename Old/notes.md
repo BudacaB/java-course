@@ -737,8 +737,8 @@ public class Play {
         funcSumCallback(3, Play::updateCounter);
         
         // ---- returning a function
-        Function<Integer, Integer> check = doubleFunction;
-        System.out.println(check.apply(2));
+        Function<Integer, Integer> square = squareFunction;
+        System.out.println(square.apply(2));
     }
 
     public static int getSum1(int nr) {
@@ -780,6 +780,6 @@ public class Play {
     
    // ---- returning a function
    
-   public static final Function<Integer, Integer> doubleFunction = input -> input * 2;
+   public static final Function<Integer, Integer> squareFunction = input -> input * 2;
 }
 ```
