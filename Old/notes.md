@@ -735,6 +735,10 @@ public class Play {
         sumTestWithUpdate(3);
 
         funcSumCallback(3, Play::updateCounter);
+        
+        // ---- returning a function
+        Function<Integer, Integer> check = doubleFunction;
+        System.out.println(check.apply(2));
     }
 
     public static int getSum1(int nr) {
@@ -772,5 +776,10 @@ public class Play {
         int result = nr + 5;
         fun.accept(result);
     }
+    
+    
+   // ---- returning a function
+   
+   public static final Function<Integer, Integer> doubleFunction = input -> input * 2;
 }
 ```
